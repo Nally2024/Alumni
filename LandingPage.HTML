@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Network</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --custom-color: #AB3A3A;
+        }
+        
+        .btn-primary {
+            background-color: var(--custom-color);
+            border-color: var(--custom-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #8f3131;
+            border-color: #8f3131;
+        }
+        
+        .btn-outline-primary {
+            color: var(--custom-color);
+            border-color: var(--custom-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--custom-color);
+            border-color: var(--custom-color);
+        }
+        
+        .text-primary {
+            color: var(--custom-color) !important;
+        }
+        
+        .btn-danger {
+            background-color: var(--custom-color);
+            border-color: var(--custom-color);
+        }
+        
+        .btn-danger:hover {
+            background-color: #8f3131;
+            border-color: #8f3131;
+        }
+        
+        /* Rest of your existing styles */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/path/to/your/image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 6rem 0;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 3rem 0;
+            }
+            .hero-content {
+                padding: 1rem;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+        }
+        .feature-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        .testimonial-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        .contact-section {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+        }
+        .map-container {
+            height: 400px;
+            width: 100%;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .map-container {
+                height: 300px;
+            }
+        }
+        .login-modal .modal-content {
+            border-radius: 15px;
+        }
+        .social-login-btn {
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Central Uni Alumni</a>
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signupModal" >Sign Up</button>
+            </div>
+        </div>
+    </nav>
+    <!-- Signup Modal -->
+<div class="modal fade signup-modal" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signupModalLabel">Create Your Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="John Doe" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="example@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="+1234567890" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="dob" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select class="form-select" id="gender" required>
+                            <option value="" disabled selected>Select your gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <textarea class="form-control" id="address" placeholder="Your address" rows="2" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter a strong password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter your password" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="termsAndConditions" required>
+                        <label class="form-check-label" for="termsAndConditions">I agree to the <a href="#">Terms and Conditions</a></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                </form>
+                <div class="text-center my-3">
+                    <p>Or sign up with</p>
+                </div>
+                <button class="social-login-btn mb-2" aria-label="Continue with Google">
+                    <i class="fab fa-google"></i>
+                    Continue with Google
+                </button>
+                <button class="social-login-btn" aria-label="Continue with LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                    Continue with LinkedIn
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Login Modal -->
+    <div class="modal fade login-modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                    <div class="text-center my-3">
+                        <p>Or login with</p>
+                    </div>
+                    <button class="social-login-btn" aria-label="Continue with Google">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <button class="social-login-btn" aria-label="Continue with LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                        Continue with LinkedIn
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10">
+                    <div class="hero-content">
+                        <h1>Connect, Engage, and Thrive with Your Alumni Network</h1>
+                        <p class="lead">Join our vibrant community of graduates and make meaningful connections that last a lifetime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mb-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                    <h3>Connect, Engage, and Thrive</h3>
+                    <p>Join our alumni community platform for networking and collaboration.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-network-wired fa-3x mb-3 text-primary"></i>
+                    <h3>Build Meaningful Connections</h3>
+                    <p>Create professional relationships with fellow alumni worldwide.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-calendar-check fa-3x mb-3 text-primary"></i>
+                    <h3>Event Management</h3>
+                    <p>Stay informed with our dynamic event management system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empowering Alumni Section -->
+    <section class="container mb-5">
+        <h2 class="mb-4">Empowering Alumni Through Innovative Features</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <img src="/api/placeholder/400/300" alt="Alumni Portal" class="img-fluid mb-3 rounded">
+                <h4>Explore Our Job Portal</h4>
+                <p>Find exciting career opportunities within our network.</p>
+                <button class="btn btn-outline-primary">Learn More</button>
+            </div>
+            <div class="col-md-4">
+                <img src="/api/placeholder/400/300" alt="Mentorship" class="img-fluid mb-3 rounded">
+                <h4>Support Your Alma Mater</h4>
+                <p>Give back through mentorship and donations.</p>
+                <button class="btn btn-outline-primary">Get Started</button>
+            </div>
+            <div class="col-md-4">
+                <img src="/api/placeholder/400/300" alt="Events" class="img-fluid mb-3 rounded">
+                <h4>Engage with Fellow Alumni</h4>
+                <p>Participate in exclusive alumni events and programs.</p>
+                <button class="btn btn-outline-primary">View Events</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container mb-5">
+        <h2 class="mb-4">Alumni Testimonials</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="testimonial-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="/api/placeholder/50/50" alt="Avatar" class="rounded-circle me-3">
+                        <div>
+                            <h5 class="mb-0">John Doe</h5>
+                            <p class="text-muted mb-0">Class of 2020</p>
+                        </div>
+                    </div>
+                    <p>"The alumni network has been an invaluable resource for my professional growth."</p>
+                    <div class="text-warning">
+                        ★★★★★
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="testimonial-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="/CentralUni Alumni/MAR.jpeg" alt="Avatar" class="rounded-circle me-3">
+                        <div>
+                            <h5 class="mb-0">Jane Smith</h5>
+                            <p class="text-muted mb-0">Class of 2019</p>
+                        </div>
+                    </div>
+                    <p>"Connecting with fellow alumni has opened up amazing opportunities."</p>
+                    <div class="text-warning">
+                        ★★★★★
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="mb-4">Contact Us</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="mb-4">
+                        <i class="fas fa-envelope me-2"></i>
+                        <span>alumni@centraluni.edu</span>
+                    </div>
+                    <div class="mb-4">
+                        <i class="fas fa-phone me-2"></i>
+                        <span>076-56-70-69</span>
+                    </div>
+                    <div class="mb-4">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        <span>1 Silicon Hills, Mile-91, SierraLeone</span>
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="3" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1!2d-73.9!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzAwLjAiTiA3M8KwNTQnMDAuMCJX!5e0!3m2!1sen!2sus!4v1234567890"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <img src="/api/placeholder/100/30" alt="Logo" class="mb-3">
+            <p class="text-muted mb-0">© 2024 Central University Alumni Association. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
