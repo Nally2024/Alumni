@@ -1,0 +1,175 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f6f2f2;
+  }
+  
+  .navbar .logo img {
+    max-height: 50px; 
+    width: auto;
+    height: auto;
+    display: block;
+  }
+  
+  .navbar .buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .navbar .button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    background-color: #800000; /* Changed to maroon */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar .button:hover {
+    background-color: #4d0000; /* Darker shade of maroon */
+  }
+  
+  .navbar .button i {
+    font-size: 1.2em;
+  }
+
+  .hero-section {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/stu.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          padding: 6rem 0;
+          margin-bottom: 2rem;
+          color: white;
+      }
+      .hero-content {
+          background-color: rgba(0, 0, 0, 0.6);
+          padding: 2rem;
+          border-radius: 10px;
+      }
+      @media (max-width: 768px) {
+          .hero-section {
+              padding: 3rem 0;
+          }
+          .hero-content {
+              padding: 1rem;
+          }
+          .hero-content h1 {
+              font-size: 1.8rem;
+          }
+      }
+      .feature-card {
+          padding: 1.5rem;
+          border-radius: 8px;
+          margin-bottom: 2rem;
+          text-align: center;
+          background: white;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          height: 100%;
+      }
+
+      
+  
+      .footer {
+  background-color: #121212;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.footer-logo img {
+  max-width: 100px;
+  margin-bottom: 1rem;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.get-in-touch .social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.get-in-touch .social-icons a {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.subscribe {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.subscribe input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.subscribe button {
+  background-color: #510d0e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .footer-columns {
+      flex-direction: column;
+      text-align: center;
+  }
+}
+

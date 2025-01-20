@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- Link to the static CSS file -->
+    <link rel="stylesheet" href="static/index.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="{% static 'images/logo.svg' %}" alt="Logo">
+        </div>
+        <!-- Buttons -->
+        <div class="buttons">
+            <a href="{% url 'login' %}" class="button">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+            <a href="#" class="button">
+                <i class="fas fa-phone-alt"></i> Contact
+            </a>
+        </div>
+    </div>
+
+    <section class="hero-section">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-md-10">
+                  <div class="hero-content">
+                      <h1>Connect, Engage, and Thrive with Your Alumni Network</h1>
+                      <p class="lead">Join our vibrant community of graduates and make meaningful connections that last a lifetime.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  
+    <!-- Features Section -->
+    <section class="container-fluid mb-5 px-4">
+      <div class="row g-4">
+          <div class="col-md-4">
+              <div class="feature-card">
+                  <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                  <h3>Connect, Engage, and Thrive</h3>
+                  <p>Join our alumni community platform for networking and collaboration.</p>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="feature-card">
+                  <i class="fas fa-network-wired fa-3x mb-3 text-primary"></i>
+                  <h3>Build Meaningful Connections</h3>
+                  <p>Create professional relationships with fellow alumni worldwide.</p>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="feature-card">
+                  <i class="fas fa-calendar-check fa-3x mb-3 text-primary"></i>
+                  <h3>Event Management</h3>
+                  <p>Stay informed with our dynamic event management system.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Empowering Alumni Section -->
+  <section class="container-fluid mb-5 px-4">
+      <h2 class="mb-4">Empowering Alumni Through Innovative Features</h2>
+      <div class="row g-4">
+          <div class="col-md-4">
+              <img src="{% static 'images/portal.jpg' %}" alt="Alumni Portal" class="img-fluid mb-3 rounded">
+              <h4>Explore Our Job Portal</h4>
+              <p>Find exciting career opportunities within our network.</p>
+              <button class="btn btn-outline-primary">Learn More</button>
+          </div>
+          <div class="col-md-4">
+              <img src="{% static 'images/job.jpg' %}" alt="Mentorship" class="img-fluid mb-3 rounded">
+              <h4>Support Your Alma Mater</h4>
+              <p>Give back through mentorship and donations.</p>
+              <button class="btn btn-outline-primary">Get Started</button>
+          </div>
+          <div class="col-md-4">
+              <img src="{% static 'images/portal.jpg' %}" alt="Events" class="img-fluid mb-3 rounded">
+              <h4>Engage with Fellow Alumni</h4>
+              <p>Participate in exclusive alumni events and programs.</p>
+              <button class="btn btn-outline-primary">View Events</button>
+          </div>
+      </div>
+  </section>
+
+  <section class="news-update container-fluid px-4">
+    <header class="news-header">
+      <h1>Latest News</h1>
+      <span class="date-time">January 20, 2025</span>
+    </header>
+  
+    <div class="news-carousel">
+      <!-- Optional News Headlines Carousel -->
+      <ul class="carousel">
+        <li><a href="#">Breaking: New Tech Innovation in AI</a></li>
+        <li><a href="#">Health Update: Maternal Care Improvements</a></li>
+        <li><a href="#">Education Reform: New University Policies</a></li>
+      </ul>
+    </div>
+  
+    <div class="news-articles row g-4">
+      <div class="col-md-4">
+        <div class="article-card">
+          <img src="path_to_image.jpg" alt="Article Image">
+          <h3><a href="#">Tech Industry Shifts to AI in 2025</a></h3>
+          <p>A major shift is happening in the tech world as AI technologies take center stage in shaping the future...</p>
+          <span class="timestamp">Published: January 20, 2025</span>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="article-card">
+          <img src="path_to_image.jpg" alt="Article Image">
+          <h3><a href="#">Health Update: Maternal Care Improvements</a></h3>
+          <p>Explore recent advancements in maternal health and how they're impacting communities globally...</p>
+          <span class="timestamp">Published: January 20, 2025</span>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="article-card">
+          <img src="path_to_image.jpg" alt="Article Image">
+          <h3><a href="#">Education Reform: New University Policies</a></h3>
+          <p>Discover the latest policies shaping education for the future generation...</p>
+          <span class="timestamp">Published: January 20, 2025</span>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer class="footer">
+    <div class="container-fluid">
+        <div class="footer-columns">
+            <div class="footer-column">
+
+                <!-- <h4>Download</h4>
+                <ul>
+                    <li>Windows app</li>
+                    <li>Mac app</li>
+                    <li>Linux app</li>
+                    <li>Desktop app</li>
+                </ul> -->
+            </div>
+            <div class="footer-column">
+                <h4>Products</h4>
+                <ul>
+                    <li>Web</li>
+                    <li>App</li>
+                    <li>Software</li>
+                    <li>Ecommerce</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li>Design</li>
+                    <li>Development</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Central University</h4>
+                <ul>
+                    <li>Terms & conditions</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div class="footer-column get-in-touch">
+                <h4>Get in touch</h4>
+        
+                <div class="subscribe">
+                    <input type="email" placeholder="Enter email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>©2025 Alumni. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
